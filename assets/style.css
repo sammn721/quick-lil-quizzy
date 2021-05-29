@@ -1,0 +1,24 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+    --dark: darkblue;
+    --light: lightblue;
+}
+
+header {
+    display: flex;
+    background-color: var(--dark);
+    justify-content: space-between;
+    color: var(--light);
+    align-items: baseline;
+}
+
+a:visited {
+    color: yellowgreen;
+}
+ 
+a:hover {
+    color: tomato;
+}
