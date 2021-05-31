@@ -1,5 +1,5 @@
 var timerEl = document.querySelector(".timer");
-var score = 11;
+var score = 101;
 var timerInterval;
 
 // var questions = [
@@ -29,7 +29,9 @@ var timerInterval;
 // `startGame` function
 function startGame() {
     startTimer();
+    // hide start screen element
 }
+
 // initialize timer
 function startTimer() {
     timerInterval = setInterval(function() {
@@ -46,4 +48,6 @@ function startTimer() {
 
   }, 1000);
 }
-// hide start screen element and show first question
+
+// event capture click event on all buttons to next question
+    // if incorrect subtract from score
