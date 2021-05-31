@@ -1,42 +1,49 @@
 var timerEl = document.querySelector(".timer");
-var remainingTime = 101;
+var score = 11;
 var timerInterval;
 
-function setTimer() {
+// var questions = [
+//     {
+//         quest: "Question 1",
+//         ans: {
+//             a: "wrong",
+//             b: "wrong",
+//             c: "correct",
+//             d: "wrong"
+//         },
+//         correct: "c"
+//     },
+//     {
+//         quest: "Question 2",
+//         ans: {
+//             a: "wrong",
+//             b: "wrong",
+//             c: "correct",
+//             d: "wrong"
+//         },
+//         correct: "c"
+//     }
+// ]
+
+
+// `startGame` function
+function startGame() {
+    startTimer();
+}
+// initialize timer
+function startTimer() {
     timerInterval = setInterval(function() {
-    remainingTime--;
-    timerEl.textContent = "TIME: " + remainingTime;
+    score--;
+    timerEl.textContent = "TIME: " + score;
 
     // if(userChoice == false) {
     //     remainingTime = (remainingTime - 10);
     // }
 
-    if(remainingTime === 0) {
+    if(score === 0) {
         clearInterval(timerInterval);
       }
 
   }, 1000);
 }
-
-var questions = [
-    {
-        quest: "Commonly used data types DO NOT include:",
-        ans: {
-            strings,
-            booleans,
-            alerts,
-            numbers
-        },
-        correct: alerts
-    },
-    {
-        quest: "The condition in an if/else statement is enclosed within ___.",
-        ans: {
-            
-        }
-    }
-]
-
-
-
-setTimer();
+// hide start screen element and show first question
