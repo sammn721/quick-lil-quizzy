@@ -1,4 +1,5 @@
 var timerEl = document.querySelector(".timer");
+var startButton = document.querySelector("#start-button")
 var score = 101;
 var timerInterval;
 
@@ -39,7 +40,7 @@ function startTimer() {
     timerEl.textContent = "TIME: " + score;
 
     // if(userChoice == false) {
-    //     remainingTime = (remainingTime - 10);
+    //     remainingTime = (score - 10);
     // }
 
     if(score === 0) {
@@ -49,5 +50,12 @@ function startTimer() {
   }, 1000);
 }
 
-// event capture click event on all buttons to next question
-    // if incorrect subtract from score
+// create `answerQuestion` function    
+    
+    // click event on all answer buttons
+
+        // if incorrect subtract from score
+    
+    // continue to next question `nextQuestion()`
+
+// create `nextQuestion` function
