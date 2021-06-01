@@ -33,6 +33,36 @@ var questions = [
             d: "incorrect"
         },
         correct: "c"
+    },
+    {
+        quest: "Americans from which of these groups received $4.44 million ($10,000 for each day in captivity) from Congress in 2015?",
+        ans: {
+            a: "Descendants of slavery victims",
+            b: "Former Guantanamo detainees",
+            c: "Japanese internment camp survivors",
+            d: "Iran hostage crisis survivors"
+        },
+        correct: "d"
+    },
+    {
+        quest: "question 4",
+        ans: {
+            a: "wrong",
+            b: "right",
+            c: "wrong",
+            d: "wrong"
+        },
+        correct: "b"
+    },
+    {
+        quest: "question 5",
+        ans: {
+            a: "right",
+            b: "wrong",
+            c: "wrong",
+            d: "wrong"
+        },
+        correct: "a"
     }
 ]
 
@@ -51,6 +81,10 @@ function startGame() {
 }
 
 // create `endGame` function
+function endGame() {
+    questionsEl.classList.add("hidden");
+    endScreenEl.classList.remove("hidden");
+}
 
 // initialize timer
 function startTimer() {
@@ -58,41 +92,43 @@ function startTimer() {
     score--;
     timerEl.textContent = "TIME: " + score;
 
-    if(score === 0) {
+    if(score === 0 || index > 4) {
         clearInterval(timerInterval);
       }
 
   }, 1000);
 }
 
-// create `answerQuestion` function    
-function answerQuestion() {
-
-}
-    // click event on all answer buttons
-
-        // if incorrect subtract from score
+// create `answerQuestion` function    ????
     
     // continue to next question `nextQuestion()`
 
 // create `nextQuestion` function
 function nextQuestion() {
     index = index + 1;
+    if (index > 4) {
+        endGame();
+    } else {
     questionText.textContent = questions[index].quest;
     buttonA.textContent = questions[index].ans.a;
     buttonB.textContent = questions[index].ans.b;
     buttonC.textContent = questions[index].ans.c;
     buttonD.textContent = questions[index].ans.d;
+    }
 }
 
 
 startButton.addEventListener("click", startGame)
 
+// click event on button container to match button element and and verify answer
 buttonContainer.addEventListener("click", function(event) {
     var isButton = event.target;
-    // access current question from questions[index]
+    
+    // 
     if (isButton.matches("button") && isButton.matches("questions[index].correct")) {
         nextQuestion();
+    
+        // if incorrect subtract from score
     } else if (isButton.matches("button") && !isButton.matches("question[index].correct")) {
         score = score - 10;
         nextQuestion();
