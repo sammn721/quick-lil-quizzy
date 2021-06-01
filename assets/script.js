@@ -1,5 +1,5 @@
 var timerEl = document.querySelector(".timer");
-var score = 101;
+var score = 100;
 var timerInterval;
 var startScreenEl = document.querySelector("#start-screen");
 var startButton = document.querySelector("#start-button");
@@ -58,10 +58,6 @@ function startTimer() {
     score--;
     timerEl.textContent = "TIME: " + score;
 
-    // if(userChoice == false) {
-    //     remainingTime = (score - 10);
-    // }
-
     if(score === 0) {
         clearInterval(timerInterval);
       }
@@ -88,14 +84,17 @@ function nextQuestion() {
     buttonC.textContent = questions[index].ans.c;
     buttonD.textContent = questions[index].ans.d;
 }
-    // access current question from questions[questionIndex]
+
 
 startButton.addEventListener("click", startGame)
 
 buttonContainer.addEventListener("click", function(event) {
-    var element = event.target;
-
-    if (element.matches(".button")) {
+    var isButton = event.target;
+    // access current question from questions[index]
+    if (isButton.matches("button") && isButton.matches("questions[index].correct")) {
+        nextQuestion();
+    } else if (isButton.matches("button") && !isButton.matches("question[index].correct")) {
+        score = score - 10;
         nextQuestion();
     }
 })
