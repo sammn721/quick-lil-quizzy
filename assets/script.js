@@ -1,8 +1,13 @@
 var timerEl = document.querySelector(".timer");
-var startButton = document.querySelector("#start-button")
 var score = 101;
 var timerInterval;
+var startScreenEl = document.querySelector("#start-screen");
+var startButton = document.querySelector("#start-button");
+var questionsEl = document.querySelector("#questions");
+var buttonContainer = document.querySelector("#button-container")
+var endScreenEl = document.querySelector("#end-screen")
 
+// declare question array
 // var questions = [
 //     {
 //         quest: "Question 1",
@@ -26,12 +31,17 @@ var timerInterval;
 //     }
 // ]
 
+// declare `questionIndex`
 
 // `startGame` function
 function startGame() {
     startTimer();
     // hide start screen element
+    document.getElementById("start-screen").style.visibility = "hidden";
+    document.getElementById("questions").style.visibility = "visible";
 }
+
+// create `endGame` function
 
 // initialize timer
 function startTimer() {
@@ -59,3 +69,7 @@ function startTimer() {
     // continue to next question `nextQuestion()`
 
 // create `nextQuestion` function
+
+    // access current question from questions[questionIndex]
+
+startButton.addEventListener("click", startGame)
