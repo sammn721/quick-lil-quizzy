@@ -6,11 +6,17 @@ var startButton = document.querySelector("#start-button");
 var questionsEl = document.querySelector("#question-element");
 var questionText = document.querySelector("#question-text");
 var buttonContainer = document.querySelector("#button-container");
-var buttonA = document.querySelector("#buttonA");
-var buttonB = document.querySelector("#buttonB");
-var buttonC = document.querySelector("#buttonC");
-var buttonD = document.querySelector("#buttonD");
+var buttonA = document.querySelector("#a");
+var buttonB = document.querySelector("#b");
+var buttonC = document.querySelector("#c");
+var buttonD = document.querySelector("#d");
 var endScreenEl = document.querySelector("#end-screen");
+var index = -1;
+var nameBox = document.querySelector("#name-box")
+var yourScore = document.querySelector("#your-score");
+
+
+
 
 // declare question array
 var questions = [
@@ -66,9 +72,6 @@ var questions = [
     }
 ]
 
-// declare `index`
-var index = -1;
-var currentQuestion;
 
 // `startGame` function
 function startGame() {
@@ -77,13 +80,15 @@ function startGame() {
     startScreenEl.classList.add("hidden");
     // show question element
     questionsEl.classList.remove("hidden");
-    nextQuestion();
+    nextQuest();
 }
 
 // create `endGame` function
 function endGame() {
     questionsEl.classList.add("hidden");
     endScreenEl.classList.remove("hidden");
+    yourScore.textContent = "Your final score is " + score + ".";
+
 }
 
 // initialize timer
@@ -99,12 +104,21 @@ function startTimer() {
   }, 1000);
 }
 
-// create `answerQuestion` function    ????
-    
-    // continue to next question `nextQuestion()`
+// create `answerQuest` function    ????
+// document.getElementById('a').onclick = answerQuest;
+// document.getElementById('b').onclick = answerQuest;
+// document.getElementById('c').onclick = answerQuest;
+// document.getElementById('d').onclick = answerQuest;
 
-// create `nextQuestion` function
-function nextQuestion() {
+// function answerQuest(clicked) {
+//     console.log(clicked);
+    
+    
+// }
+    // continue to next question `nextQuest()`
+
+// create `nextQuest` function
+function nextQuest() {
     index = index + 1;
     if (index > 4) {
         endGame();
@@ -114,23 +128,24 @@ function nextQuestion() {
     buttonB.textContent = questions[index].ans.b;
     buttonC.textContent = questions[index].ans.c;
     buttonD.textContent = questions[index].ans.d;
+    
     }
 }
 
 
 startButton.addEventListener("click", startGame)
 
-// click event on button container to match button element and and verify answer
+// click event on button container to match button element
 buttonContainer.addEventListener("click", function(event) {
-    var isButton = event.target;
     
-    // 
-    if (isButton.matches("button") && isButton.matches("questions[index].correct")) {
-        nextQuestion();
     
-        // if incorrect subtract from score
-    } else if (isButton.matches("button") && !isButton.matches("question[index].correct")) {
+    if (event.target.matches("button") && (JSON.stringify(event.target.id) === JSON.stringify(questions[index].correct))) {
+        
+        nextQuest();
+        
+    } else if (event.target.matches("button") && (JSON.stringify(event.target.id) !== JSON.stringify(questions[index].correct))) {
         score = score - 10;
-        nextQuestion();
+        nextQuest();
+
     }
-})
+});
