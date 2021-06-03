@@ -6,13 +6,14 @@
     --dark: darkblue;
     --light: lightblue;
 }
-main {
-    display: flex;
-    justify-content: center;
-}
 
 .hidden {
     display: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
 }
 
 header {
@@ -42,7 +43,7 @@ a:hover {
     max-width: 250px;
 }
 
-#button-container button {
+button {
     margin: 5px;
     padding: 5px;
     background-color: var(--dark);
@@ -73,4 +74,21 @@ a:hover {
 .display-score {
     margin: 10px;
     display: flex;
+}
+
+#high-scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#high-scores h3 {
+    display: flex;
+    justify-content: center;
+}
+
+#high-scores span {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-direction: column; */
 }

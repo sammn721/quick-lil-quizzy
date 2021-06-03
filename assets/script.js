@@ -13,7 +13,6 @@ var buttonD = document.querySelector("#d");
 var endScreenEl = document.querySelector("#end-screen");
 var questIndex = -1;
 var yourScore = document.querySelector("#your-score");
-// var nameBox = document.querySelector("#name-box");
 var user = document.querySelector("#user");
 var scoreButton = document.querySelector("#score-button");
 // var displayName = document.querySelector("#display-name");
@@ -55,10 +54,10 @@ var questions = [
     {
         quest: "What is the upcoming (September 2021) season number of Survivor?",
         ans: {
-            a: "20",
-            b: "30",
-            c: "40",
-            d: "50"
+            a: "21",
+            b: "31",
+            c: "41",
+            d: "51"
         },
         correct: "c"
     },
@@ -66,8 +65,8 @@ var questions = [
         quest: "English is the most widely learned second language spoken in the world. What is the second?",
         ans: {
             a: "Hindustani",
-            b: "Standard Arabic",
-            c: "Mandarin Chinese",
+            b: "Arabic",
+            c: "Mandarin",
             d: "French"
         },
         correct: "a"
