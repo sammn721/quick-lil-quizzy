@@ -16,7 +16,8 @@ var yourScore = document.querySelector("#your-score");
 // var nameBox = document.querySelector("#name-box");
 var user = document.querySelector("#user");
 var scoreButton = document.querySelector("#score-button");
-
+var displayName = document.querySelector("#display-name");
+var displayScore = document.querySelector("#display-score");
 
 
 // declare question array
@@ -121,7 +122,16 @@ function nextQuest() {
     }
 }
 
+function renderHighScores() {
+    var userName = localStorage.getItem("user");
 
+    if (!userName) {
+        return;
+    }
+
+    displayName.textContent = userName;
+    displayScore.textContent = userScore
+}
 
 
 startButton.addEventListener("click", startGame);
@@ -145,6 +155,7 @@ scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     var userName = user.value;
+    var userScore = score.value;
     
     if (userName --- "") {
         displayMessage("error", "Name cannot be blank.");
@@ -152,5 +163,7 @@ scoreButton.addEventListener("click", function(event) {
         displayMessage("success", "You will always be rememebered.");
 
         localStorage.setItem("user", userName);
+        localStorage.setItem("score", userScore);
+        
     }
 })
