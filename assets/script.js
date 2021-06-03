@@ -13,7 +13,8 @@ var buttonD = document.querySelector("#d");
 var endScreenEl = document.querySelector("#end-screen");
 var questIndex = -1;
 var yourScore = document.querySelector("#your-score");
-var nameBox = document.querySelector("#name-box");
+// var nameBox = document.querySelector("#name-box");
+var user = document.querySelector("#user");
 var scoreButton = document.querySelector("#score-button");
 
 
@@ -121,9 +122,9 @@ function nextQuest() {
 }
 
 
+
+
 startButton.addEventListener("click", startGame);
-
-
 
 // click event on button container to match button element
 buttonContainer.addEventListener("click", function(event) {
@@ -140,4 +141,16 @@ buttonContainer.addEventListener("click", function(event) {
     }
 });
 
-scoreButton.addEventListener("click", )
+scoreButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var userName = user.value;
+    
+    if (userName --- "") {
+        displayMessage("error", "Name cannot be blank.");
+    } else {
+        displayMessage("success", "You will always be rememebered.");
+
+        localStorage.setItem("user", userName);
+    }
+})
