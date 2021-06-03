@@ -6,6 +6,14 @@
     --dark: darkblue;
     --light: lightblue;
 }
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
 
 header {
     display: flex;
@@ -23,6 +31,20 @@ a:hover {
     color: tomato;
 }
 
-.hidden {
-    display: none;
+.question-text {
+    max-width: 500px;
+    overflow-wrap: normal;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+#button-container button {
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--dark);
+    color: var(--light);
 }

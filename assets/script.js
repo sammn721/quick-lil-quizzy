@@ -11,10 +11,10 @@ var buttonB = document.querySelector("#b");
 var buttonC = document.querySelector("#c");
 var buttonD = document.querySelector("#d");
 var endScreenEl = document.querySelector("#end-screen");
-var index = -1;
-var nameBox = document.querySelector("#name-box")
+var questIndex = -1;
 var yourScore = document.querySelector("#your-score");
-
+var nameBox = document.querySelector("#name-box");
+var scoreButton = document.querySelector("#score-button");
 
 
 
@@ -87,7 +87,7 @@ function startGame() {
 function endGame() {
     questionsEl.classList.add("hidden");
     endScreenEl.classList.remove("hidden");
-    yourScore.textContent = "Your final score is " + score + ".";
+    yourScore.textContent = "Final Score: " + score;
 
 }
 
@@ -97,55 +97,47 @@ function startTimer() {
     score--;
     timerEl.textContent = "TIME: " + score;
 
-    if(score === 0 || index > 4) {
+    if(score === 0 || questIndex > 4) {
         clearInterval(timerInterval);
+        endGame();
       }
 
   }, 1000);
 }
 
-// create `answerQuest` function    ????
-// document.getElementById('a').onclick = answerQuest;
-// document.getElementById('b').onclick = answerQuest;
-// document.getElementById('c').onclick = answerQuest;
-// document.getElementById('d').onclick = answerQuest;
-
-// function answerQuest(clicked) {
-//     console.log(clicked);
-    
-    
-// }
-    // continue to next question `nextQuest()`
-
 // create `nextQuest` function
 function nextQuest() {
-    index = index + 1;
-    if (index > 4) {
+    questIndex = questIndex + 1;
+    if (questIndex > 4) {
         endGame();
     } else {
-    questionText.textContent = questions[index].quest;
-    buttonA.textContent = questions[index].ans.a;
-    buttonB.textContent = questions[index].ans.b;
-    buttonC.textContent = questions[index].ans.c;
-    buttonD.textContent = questions[index].ans.d;
+    questionText.textContent = questions[questIndex].quest;
+    buttonA.textContent = questions[questIndex].ans.a;
+    buttonB.textContent = questions[questIndex].ans.b;
+    buttonC.textContent = questions[questIndex].ans.c;
+    buttonD.textContent = questions[questIndex].ans.d;
     
     }
 }
 
 
-startButton.addEventListener("click", startGame)
+startButton.addEventListener("click", startGame);
+
+
 
 // click event on button container to match button element
 buttonContainer.addEventListener("click", function(event) {
     
     
-    if (event.target.matches("button") && (JSON.stringify(event.target.id) === JSON.stringify(questions[index].correct))) {
+    if (event.target.matches("button") && (JSON.stringify(event.target.id) === JSON.stringify(questions[questIndex].correct))) {
         
         nextQuest();
         
-    } else if (event.target.matches("button") && (JSON.stringify(event.target.id) !== JSON.stringify(questions[index].correct))) {
+    } else if (event.target.matches("button") && (JSON.stringify(event.target.id) !== JSON.stringify(questions[questIndex].correct))) {
         score = score - 10;
         nextQuest();
 
     }
 });
+
+scoreButton.addEventListener("click", )
