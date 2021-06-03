@@ -1,5 +1,7 @@
-var displayName = document.querySelector("#display-name");
-var displayScore = document.querySelector("#display-score");
+var displayName = document.querySelector(".display-name");
+var displayScore = document.querySelector(".display-score");
+var plaque = document.querySelector(".plaque");
+var scoreList = [];
 
 function renderHighScores() {
     var userName = localStorage.getItem("user");
@@ -7,5 +9,6 @@ function renderHighScores() {
 
     displayName.textContent = userName;
     displayScore.textContent = score;
+    
 }
 renderHighScores();

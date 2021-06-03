@@ -23,24 +23,24 @@ var scoreButton = document.querySelector("#score-button");
 // declare question array
 var questions = [
     {
-        quest: "Question 1",
+        quest: "Who is widely considered to be the first existentialist philosopher?",
         ans: {
-            a: "wrong",
-            b: "wrong",
-            c: "right",
-            d: "wrong"
+            a: "Fyodor Dostoevsky",
+            b: "Jean-Paul Sartre",
+            c: "Soren Kierkegaard",
+            d: "Friedrich Nietzsche"
         },
         correct: "c"
     },
     {
-        quest: "Question 2",
+        quest: "How many crewmembers are currently in the Straw Hat Pirates?",
         ans: {
-            a: "incorrect",
-            b: "incorrect",
-            c: "correct",
-            d: "incorrect"
+            a: "9",
+            b: "10",
+            c: "11",
+            d: "12"
         },
-        correct: "c"
+        correct: "b"
     },
     {
         quest: "Americans from which of these groups received $4.44 million ($10,000 for each day in captivity) from Congress in 2015?",
@@ -53,22 +53,22 @@ var questions = [
         correct: "d"
     },
     {
-        quest: "question 4",
+        quest: "What is the upcoming (September 2021) season number of Survivor?",
         ans: {
-            a: "wrong",
-            b: "right",
-            c: "wrong",
-            d: "wrong"
+            a: "20",
+            b: "30",
+            c: "40",
+            d: "50"
         },
-        correct: "b"
+        correct: "c"
     },
     {
-        quest: "question 5",
+        quest: "English is the most widely learned second language spoken in the world. What is the second?",
         ans: {
-            a: "right",
-            b: "wrong",
-            c: "wrong",
-            d: "wrong"
+            a: "Hindustani",
+            b: "Standard Arabic",
+            c: "Mandarin Chinese",
+            d: "French"
         },
         correct: "a"
     }

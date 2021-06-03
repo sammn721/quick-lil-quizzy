@@ -48,3 +48,29 @@ a:hover {
     background-color: var(--dark);
     color: var(--light);
 }
+
+#high-scores {
+    display:flex;
+    flex-direction: column;
+}
+
+#score-list {
+    display: flex;
+    
+
+}
+
+.plaque {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-name {
+    margin: 10px;
+    display:flex;
+}
+
+.display-score {
+    margin: 10px;
+    display: flex;
+}
