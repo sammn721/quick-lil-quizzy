@@ -16,8 +16,8 @@ var yourScore = document.querySelector("#your-score");
 // var nameBox = document.querySelector("#name-box");
 var user = document.querySelector("#user");
 var scoreButton = document.querySelector("#score-button");
-var displayName = document.querySelector("#display-name");
-var displayScore = document.querySelector("#display-score");
+// var displayName = document.querySelector("#display-name");
+// var displayScore = document.querySelector("#display-score");
 
 
 // declare question array
@@ -122,16 +122,16 @@ function nextQuest() {
     }
 }
 
-function renderHighScores() {
-    var userName = localStorage.getItem("user");
+// function renderHighScores() {
+//     var userName = localStorage.getItem("user");
 
-    if (!userName) {
-        return;
-    }
+//     if (!userName) {
+//         return;
+//     }
 
-    displayName.textContent = userName;
-    displayScore.textContent = userScore
-}
+//     displayName.textContent = userName;
+//     displayScore.textContent = score
+// }
 
 
 startButton.addEventListener("click", startGame);
@@ -155,15 +155,17 @@ scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     var userName = user.value;
-    var userScore = score.value;
+    // var userScore = score;
     
-    if (userName --- "") {
-        displayMessage("error", "Name cannot be blank.");
-    } else {
-        displayMessage("success", "You will always be rememebered.");
+    // if (userName === "") {
+    //     displayMessage("error", "Name cannot be blank.");
+    // } else {
+    //     displayMessage("success", "You will always be rememebered.");
 
         localStorage.setItem("user", userName);
-        localStorage.setItem("score", userScore);
-        
-    }
+        localStorage.setItem("score", score);
+        console.log(userName);
+        console.log(score);
+        window.open("highscores.html", "_self");
+    // }
 })
