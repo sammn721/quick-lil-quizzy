@@ -20,7 +20,7 @@ A short quiz covering the first few topics that came to mind.
 -Clicking the "Submit Score" button will take the user to the "High Scores" page, where they will see their name and score.<br>
 -Clicking the "Go back" button will take the user back to the "Start Screen".<br>
 -Successive attempts will allow the user to log a new name and/or score to the high scores list. (currently in progress)<br>
--Clicking the "Clear scores" button will clear the current high scores list. (currently in progress)<br>
+-Clicking the "Clear scores" button will clear the current high scores list.<br>
 https://sammn721.github.io/quick-lil-quizzy/<br>
 ![alt text](assets/images/popquizstart.png)
 ![alt text](assets/images/popquizquest.png)
