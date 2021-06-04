@@ -1,23 +1,17 @@
 var displayName = document.querySelector(".display-name");
 var displayScore = document.querySelector(".display-score");
-var userName = localStorage.getItem("user");
-var score = localStorage.getItem("finalScore");
-// var nameList = [];
-// var scoreList = [];
-
-
+// var userName = localStorage.getItem("user");
+// var score = localStorage.getItem("finalScore");
+var scoreList = document.querySelector("#score-list");
+var record = localStorage.getItem("record");
 var clearButton = document.querySelector("#clear-button");
 
 function renderHighScores() {
-    // var userName = localStorage.getItem("user");
-    // var score = localStorage.getItem("finalScore");
 
-    displayName.textContent = userName;
-    displayScore.textContent = score;
-    // nameList.push(userName);
-    // scoreList.push(score);
-    // console.log(nameList);
-    // console.log(scoreList);
+    scoreList.textContent = record;
+    // displayName.textContent = userName;
+    // displayScore.textContent = score;
+    
 }
 
 function clearStorage() {
@@ -26,5 +20,5 @@ function clearStorage() {
 }
 
 renderHighScores();
-
+console.log(record);
 clearButton.addEventListener("click", clearStorage)

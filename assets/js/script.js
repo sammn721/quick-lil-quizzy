@@ -138,10 +138,13 @@ buttonContainer.addEventListener("click", function(event) {
 scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
-    var userName = user.value;
-    
-        localStorage.setItem("user", userName);
-        localStorage.setItem("finalScore", score);
-        window.open("highscores.html", "_self");
+    var record = [
+        {
+            userName: user.value,
+            score: score
+        }
+    ]
+        localStorage.setItem("record", JSON.stringify(record));
+        window.open("highscores.html");
 
 })
