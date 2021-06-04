@@ -6,7 +6,7 @@ A short quiz covering the first few topics that came to mind.
 -I learned:<br>
 <>How to bring multiple functions and event listeners together into a coehsive JavaScript file.<br>
 <>How to write object literals.<br>
-<>How to store to/retrieve data from local storage.<br>
+<>How to set/get data to/from local storage.<br>
 -I reviewed:<br>
 <>HTML structure.<br>
 <>Flex boxes.<br>
