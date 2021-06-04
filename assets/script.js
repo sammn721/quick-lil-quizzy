@@ -81,12 +81,14 @@ function startGame() {
     startScreenEl.classList.add("hidden");
     // show question element
     questionsEl.classList.remove("hidden");
+    questionsEl.classList.add("visible");
     nextQuest();
 }
 
 // create `endGame` function
 function endGame() {
     questionsEl.classList.add("hidden");
+    questionsEl.classList.remove("visible");
     endScreenEl.classList.remove("hidden");
     yourScore.textContent = "Final Score: " + score;
 

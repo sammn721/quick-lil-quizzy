@@ -24,6 +24,10 @@ header {
     align-items: baseline;
 }
 
+a:link {
+    color: yellowgreen;
+}
+
 a:visited {
     color: yellowgreen;
 }
@@ -32,15 +36,26 @@ a:hover {
     color: tomato;
 }
 
-.question-text {
+#question-text {
     max-width: 500px;
     overflow-wrap: normal;
 }
 
-#button-container {
+#question-element.visible {
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    align-items: center;
+}
+
+#button-container {
+    display:grid;
+    grid-template-columns: auto auto;
+    /* display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; */
 }
 
 button {
@@ -48,6 +63,8 @@ button {
     padding: 5px;
     background-color: var(--dark);
     color: var(--light);
+    border-radius: 5px;
+    min-width: 75px;
 }
 
 #high-scores {
@@ -57,11 +74,17 @@ button {
 
 #score-list {
     display: flex;
-    
+    padding-left: 0px;
+    justify-content: center;
 
 }
 
 .plaque {
+    display: flex;
+    padding-left: 0px;
+}
+
+.plaque span {
     display: flex;
     justify-content: space-between;
 }
@@ -79,7 +102,7 @@ button {
 #high-scores {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
 }
 
 #high-scores h3 {
@@ -89,6 +112,4 @@ button {
 
 #high-scores span {
     display: flex;
-    /* flex-direction: row; */
-    /* flex-direction: column; */
 }
