@@ -67,6 +67,15 @@ button {
     min-width: 75px;
 }
 
+form input {
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--dark);
+    color: var(--light);
+    border-radius: 5px;
+    min-width: 75px;
+}
+
 #high-scores {
     display:flex;
     flex-direction: column;

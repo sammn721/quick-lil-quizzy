@@ -5,6 +5,9 @@ var plaque = document.querySelector(".plaque");
 var nameList = [];
 var scoreList = [];
 
+// var backButton = document.querySelector("#back-button");
+var clearButton = document.querySelector("#clear-button");
+
 function renderHighScores() {
     var userName = localStorage.getItem("user");
     var score = localStorage.getItem("score");
