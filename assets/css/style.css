@@ -82,19 +82,12 @@ form input {
 }
 
 #score-list {
-    display: flex;
-    padding-left: 0px;
-    justify-content: center;
-
+    display:flex;
+    flex-direction: column;
 }
 
-.plaque {
-    display: flex;
-    padding-left: 0px;
-}
-
-.plaque span {
-    display: flex;
+#score-list span {
+    display:flex;
     justify-content: space-between;
 }
 

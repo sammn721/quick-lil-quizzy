@@ -98,9 +98,8 @@ function startTimer() {
 
     if(score === 0 || questIndex > 4) {
         clearInterval(timerInterval);
-        endGame();
+        endGame(); 
       }
-
   }, 1000);
 }
 
@@ -115,7 +114,6 @@ function nextQuest() {
     buttonB.textContent = questions[questIndex].ans.b;
     buttonC.textContent = questions[questIndex].ans.c;
     buttonD.textContent = questions[questIndex].ans.d;
-    
     }
 }
 
@@ -141,7 +139,7 @@ scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     var userName = user.value;
-
+    
         localStorage.setItem("user", userName);
         localStorage.setItem("finalScore", score);
         window.open("highscores.html", "_self");
