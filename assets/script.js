@@ -26,7 +26,7 @@ var questions = [
         ans: {
             a: "Fyodor Dostoevsky",
             b: "Jean-Paul Sartre",
-            c: "Soren Kierkegaard",
+            c: "Søren Kierkegaard",
             d: "Friedrich Nietzsche"
         },
         correct: "c"
@@ -146,7 +146,7 @@ buttonContainer.addEventListener("click", function(event) {
         nextQuest();
         
     } else if (event.target.matches("button") && (JSON.stringify(event.target.id) !== JSON.stringify(questions[questIndex].correct))) {
-        score = score - 10;
+        score = score - 15;
         nextQuest();
 
     }
