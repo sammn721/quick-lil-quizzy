@@ -15,9 +15,6 @@ var questIndex = -1;
 var yourScore = document.querySelector("#your-score");
 var user = document.querySelector("#user");
 var scoreButton = document.querySelector("#score-button");
-// var displayName = document.querySelector("#display-name");
-// var displayScore = document.querySelector("#display-score");
-
 
 // declare question array
 var questions = [
@@ -73,7 +70,6 @@ var questions = [
     }
 ]
 
-
 // `startGame` function
 function startGame() {
     startTimer();
@@ -123,18 +119,6 @@ function nextQuest() {
     }
 }
 
-// function renderHighScores() {
-//     var userName = localStorage.getItem("user");
-
-//     if (!userName) {
-//         return;
-//     }
-
-//     displayName.textContent = userName;
-//     displayScore.textContent = score
-// }
-
-
 startButton.addEventListener("click", startGame);
 
 // click event on button container to match button element
@@ -152,21 +136,14 @@ buttonContainer.addEventListener("click", function(event) {
     }
 });
 
+//click event on "submit score" button to save name and score to local storage
 scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     var userName = user.value;
-    // var userScore = score;
-    
-    // if (userName === "") {
-    //     displayMessage("error", "Name cannot be blank.");
-    // } else {
-    //     displayMessage("success", "You will always be rememebered.");
 
         localStorage.setItem("user", userName);
-        localStorage.setItem("score", score);
-        console.log(userName);
-        console.log(score);
+        localStorage.setItem("finalScore", score);
         window.open("highscores.html", "_self");
-    // }
+
 })

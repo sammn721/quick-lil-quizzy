@@ -10,7 +10,7 @@ var clearButton = document.querySelector("#clear-button");
 
 function renderHighScores() {
     var userName = localStorage.getItem("user");
-    var score = localStorage.getItem("score");
+    var score = localStorage.getItem("finalScore");
 
     displayName.textContent = userName;
     displayScore.textContent = score;

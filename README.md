@@ -22,5 +22,5 @@ A short quiz covering the first few topics that came to mind.
 -Successive attempts will allow the user to log a new name and/or score to the high scores list. (currently in progress)<br>
 -Clicking the "Clear scores" button will clear the current high scores list. (currently in progress)<br>
 https://sammn721.github.io/quick-lil-quizzy/<br>
-![alt text](assets/popquizstart.png)
-![alt text](assets/popquizquest.png)
+![alt text](assets/images/popquizstart.png)
+![alt text](assets/images/popquizquest.png)
