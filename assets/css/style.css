@@ -86,10 +86,10 @@ form input {
     flex-direction: column;
 }
 
-#score-list span {
+/* #score-list span {
     display:flex;
     justify-content: space-between;
-}
+} */
 
 .display-name {
     margin: 10px;
@@ -114,4 +114,5 @@ form input {
 
 #high-scores span {
     display: flex;
+    justify-content: space-around;
 }

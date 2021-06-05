@@ -139,12 +139,15 @@ scoreButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     var record = [
-        {
-            userName: user.value,
-            score: score
-        }
-    ]
-        localStorage.setItem("record", JSON.stringify(record));
-        window.open("highscores.html");
+    {
+        userName: user.value
+    },
+    {
+        finalScore: score
+    }];
+
+    localStorage.setItem("record", JSON.stringify(record));
+    window.open("highscores.html", "_self");
+    // window.open("highscores.html");
 
 })
