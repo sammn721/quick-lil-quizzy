@@ -1,5 +1,4 @@
-var displayName = document.querySelector(".display-name");
-var displayScore = document.querySelector(".display-score");
+var listContainer = document.querySelector("#list-container");
 var scoreList = document.querySelector("#score-list");
 var li = document.createElement('li');
 var record = JSON.parse(localStorage.getItem("record"));
@@ -10,26 +9,31 @@ var flexName = document.createElement('p');
 var flexScore = document.createElement('p');
 var backButton = document.querySelector("#back-button");
 var clearButton = document.querySelector("#clear-button");
+var savedList = JSON.parse(localStorage.getItem("savedList"));
 
-function renderHighScores() {
+function addScore() {
 
-    scoreList = localStorage.getItem("saveList");
+    // scoreList = localStorage.getItem("scoreList") || [];
+    // if (scoreList != []) {
+        // scoreList.parentElement.replaceChild(savedList, scoreList);
+    // }
     
-    flexName.appendChild(displayName);
-    flexScore.appendChild(displayScore);
+    scoreList.appendChild(li);
+    li.appendChild(span);
     span.appendChild(flexName);
     span.appendChild(flexScore);
-    li.appendChild(span);
-    scoreList.appendChild(li);
+    flexName.appendChild(displayName);
+    flexScore.appendChild(displayScore);
     
-    // localStorage.setItem("fullList", JSON.stringify(scoreList));
-    
+    localStorage.setItem("savedList", JSON.stringify(scoreList));
     console.log(scoreList);
+    console.log(listContainer);
+    console.log(localStorage.getItem("savedList"));
 }
 
 function saveHighScores() {
 
-    localStorage.setItem("saveList", scoreList);
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
 }
 
 function clearStorage() {
@@ -38,7 +42,7 @@ function clearStorage() {
     location.reload();
 }
 
-renderHighScores();
+addScore();
 
 // backButton.addEventListener("submit", saveHighScores)
 
